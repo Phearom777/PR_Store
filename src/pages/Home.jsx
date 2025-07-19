@@ -4,7 +4,7 @@ import { useCart } from "./CartContext";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
-function Home({ product }) {
+function Home() {
   // carousel
   const carouselImages = [
     { src: "/public/image/product/banners1.jpg", alt: "Slide 1",title: "EXTREME DEALS OF THE DAY", },

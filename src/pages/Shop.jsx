@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useCart } from "./CartContext";
 
 function Shop() {
-  const { addToCart, favorites, toggleFavorite } = useCart();
+  const { addToCart, toggleFavorite } = useCart();
 
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [filteredProducts, setFilteredProducts] = useState(products);

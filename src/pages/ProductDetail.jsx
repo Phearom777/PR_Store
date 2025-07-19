@@ -9,7 +9,7 @@ function ProductDetail() {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
   const price = parseFloat(product.salePrice);
-  const { addToCart, favorites, toggleFavorite } = useCart();
+  const { addToCart, toggleFavorite } = useCart();
 
   const handleAdd = (product) => {
     toast.success("🛒 Product added to cart!");
@@ -19,7 +19,7 @@ function ProductDetail() {
   const randomProducts = [...products]
     .sort(() => 0.5 - Math.random())
     .slice(0, 4);
-  const isFav = favorites.some((item) => item.id === products.id);
+  // const isFav = favorites.some((item) => item.id === products.id);
 
   return (
     <>

@@ -505,9 +505,9 @@ img{
   margin: 0;
 }
 
-.input_field[type=number] {
+/* .input_field[type=number] {
   -moz-appearance: textfield;
-}
+} */
 /* modal */
 
 @media (max-width: 768px) {
