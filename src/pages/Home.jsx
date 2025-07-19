@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 function Home() {
   // carousel
   const carouselImages = [
-    { src: "public/image/product/banners1.jpg", alt: "Slide 1",title: "EXTREME DEALS OF THE DAY", },
-    { src: "public/image/product/banners2.png", alt: "Slide 2",title: "SALE! 20% LAPTOP AND TABLATE", },
-    { src: "public/image//product/watchbanner.jpg", alt: "Slide 3",title: "EXTREME DEALS OF THE DAY", },
-    { src: "public/image//product/tvbanner.png", alt: "Slide 4",title: "SALE! 20% OF SAMSUNG TV", },
-    { src: "public/image//product/asuzmonitor.png", alt: "Slide 4",title: "EXTREME DEALS OF THE DAY", },
+    { src: "/image/product/banners1.jpg", alt: "Slide 1",title: "EXTREME DEALS OF THE DAY", },
+    { src: "/image/product/banners2.png", alt: "Slide 2",title: "SALE! 20% LAPTOP AND TABLATE", },
+    { src: "/image//product/watchbanner.jpg", alt: "Slide 3",title: "EXTREME DEALS OF THE DAY", },
+    { src: "/image//product/tvbanner.png", alt: "Slide 4",title: "SALE! 20% OF SAMSUNG TV", },
+    { src: "/image//product/asuzmonitor.png", alt: "Slide 4",title: "EXTREME DEALS OF THE DAY", },
   ];
 
   // const [cart,setCart]=useState([]);

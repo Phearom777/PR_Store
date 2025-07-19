@@ -2,58 +2,58 @@ export  const categories = [
     {
       id: 1,
       name: "Laptop",
-      image: "public/image/macbook.png",
+      image: "/image/macbook.png",
     },
     {
       id: 2,
       name: "Watch",
-      image: "public/image/watch.png",
+      image: "/image/watch.png",
     },
     {
       id: 3,
       name: "Monotor",
-      image: "public/image/desktop.png",
+      image: "/image/desktop.png",
     },
     {
       id: 4,
       name: "TV",
-      image: "public/image/product/tv.jpg",
+      image: "/image/product/tv.jpg",
     },
     {
       id: 5,
       name: "Printer ",
-      image: "public/image/product/printer.png",
+      image: "/image/product/printer.png",
     },
     {
       id: 6,
       name: "Phone",
-      image: "public/image/watch.png",
+      image: "/image/watch.png",
     },
   ];
 export const brands = [
     {
       id: 1,
-      image: "public/image/apple_brand.png",
+      image: "/image/apple_brand.png",
     },
     {
       id: 2,
-      image: "public/image/samsung_brand.png",
+      image: "/image/samsung_brand.png",
     },
     {
       id: 3,
-      image: "public/image/intel_brand.png",
+      image: "/image/intel_brand.png",
     },
     {
       id: 4,
-      image: "public/image/lenovo_brand.png",
+      image: "/image/lenovo_brand.png",
     },
     {
       id: 5,
-      image: "public/image/hp_brand.png",
+      image: "/image/hp_brand.png",
     },
     {
       id: 6,
-      image: "public/image/dell_brand.png",
+      image: "/image/dell_brand.png",
     },
   ];
 
@@ -61,7 +61,7 @@ export const products = [
   {
     id: 1,
     title: "Macbook",
-    image: "public/image/macbook.png", // adjust path as needed
+    image: "/image/macbook.png", // adjust path as needed
     regularPrice: 70,
     salePrice: 50,
     label: "-50% off",
@@ -71,7 +71,7 @@ export const products = [
   {
     id: 2,
     title: "Smart Watch",
-    image: "public/image/watch.png",
+    image: "/image/watch.png",
     regularPrice: 80,
     salePrice: 60,
     label: "-10% off",
@@ -82,7 +82,7 @@ export const products = [
   {
     id: 3,
     title: "Monitor",
-    image: "public/image/desktop.png", // adjust path as needed
+    image: "/image/desktop.png", // adjust path as needed
     regularPrice: 70,
     salePrice: 50,
     label: "-50% off",
@@ -94,7 +94,7 @@ export const products = [
   {
     id: 4,
     title: "Printer",
-    image: "public/image/product/printer.png",
+    image: "/image/product/printer.png",
     regularPrice: 80,
     salePrice: 60,
     label: "-30% off",
@@ -106,7 +106,7 @@ export const products = [
   {
     id: 5,
     title: "Gaming",
-    image: "public/image/gaming.png",
+    image: "/image/gaming.png",
     regularPrice: 80,
     salePrice: 60,
     label: "-20% off",
@@ -117,7 +117,7 @@ export const products = [
   {
     id: 6,
     title: "Desktop",
-    image: "public/image/desktop.png",
+    image: "/image/desktop.png",
     regularPrice: 80,
     salePrice: 60,
     label: "-50% off",
@@ -128,7 +128,7 @@ export const products = [
   {
     id: 7,
     title: "Macbook Pro",
-    image: "public/image/product/macbook.jpg",
+    image: "/image/product/macbook.jpg",
     regularPrice: 80,
     salePrice: 60,
     label: "-50% off",
