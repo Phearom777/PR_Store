@@ -35,7 +35,7 @@ function Navbar() {
                 )}
               </div>
               <div className="logo ">
-                <img src="/public/image/logo.png" alt="Logo" />
+                <img src="/image/logo.png" alt="Logo" />
               </div>
             </div>
 

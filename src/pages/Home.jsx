@@ -217,7 +217,7 @@ function Home() {
               <div className="color"></div>
 
               <img
-                src="/public/image/product/banner 1.jpg"
+                src="/image/product/banner 1.jpg"
                 className="image-fluid w-100"
                 alt=""
               />
@@ -233,7 +233,7 @@ function Home() {
           <div className="col-12 col-md-6 col-lg-6">
             <div className="even_banner ">
               <img
-                src="/public/image/product/banner2.jpg"
+                src="/image/product/banner2.jpg"
                 className="image-fluid w-100"
                 alt=""
               />
