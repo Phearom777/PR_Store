@@ -5,8 +5,8 @@ import style from './Login.module.css'; // CSS Module
 const Register = () => {
   return (
     <div className={`container-fluid position-fixed top-0 bg-dark z-index pt-5 ${style.login}`}>
-      <div className="container">
-        <form className={`${style.form} m-auto mt-4`}>
+      <div className={`container`}>
+        <form className={`${style.form} m-auto mt-2`}>
           <h3 className="text-center">Register</h3>
 
           {/* Email */}
@@ -41,7 +41,7 @@ const Register = () => {
 
           {/* Sign Up */}
           <p className={style.p}>
-            Don't have an account?{" "}
+            Already have account?{" "}
             <Link to={'/login'} className={`${style.span} text-decoration-none`}>Sign In</Link>
           </p>
 

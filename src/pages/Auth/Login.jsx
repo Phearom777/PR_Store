@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className={`container-fluid position-fixed top-0 bg-dark z-index pt-5 ${style.login}`}>
-      <div className="container">
-        <form className={`${style.form} m-auto mt-4`}>
+      <div className={`container`}>
+        <form className={`${style.form} m-auto mt-2`}>
           <h3 className="text-center">Login</h3>
 
           <p className={style.p}>
@@ -41,12 +41,12 @@ const Login = () => {
           </div>
 
           {/* Submit */}
-          <button className={style.buttonSubmit}>Sign In</button>
+          <button type="button"  className={style.buttonSubmit}>Sign In</button>
 
           {/* Sign Up */}
           <p className={style.p}>
-            Don't have an account?{" "}
-            
+              Don't have an account?{" "}
+            <Link to={'/register'} className={`${style.span} text-decoration-none`}>Sign Up</Link>
           </p>
           
 

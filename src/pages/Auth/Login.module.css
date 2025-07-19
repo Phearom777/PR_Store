@@ -138,4 +138,63 @@
 .login{
   z-index: 11;
   height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .buttonSubmit,
+  .button {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .inputForm {
+    height: 45px;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+
+  .flexRow {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .flexRow > div,
+  .flexRow > span {
+    width: 100%;
+    text-align: left;
+  }
+
+  .span {
+    font-size: 13px;
+  }
+
+  .p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 15px;
+  }
+
+  .buttonSubmit,
+  .button {
+    font-size: 13px;
+    padding: 12px 20px;
+  }
+
+  .inputForm {
+    padding-left: 8px;
+  }
 }

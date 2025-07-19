@@ -79,7 +79,7 @@ function Header() {
                     <li>
                       <h6 className="dropdown-header">
                         <img
-                          src="/public/image/profile.png"
+                          src="/image/profile.png"
                           className="img-fluid w-25 rounded-circle"
                           alt=""
                         />
