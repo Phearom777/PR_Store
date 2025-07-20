@@ -21,7 +21,7 @@ function Header() {
           <div className="row">
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">
               <div style={{ color: "rgb(108, 108, 108)" }} className="contact ">
-                Order online or call us (1800) 000 8808
+                Order online or call us (+885) 965 231 272
               </div>
             </div>
             <div className="col-12 col-sm-12 col-md-6 col-lg-6">

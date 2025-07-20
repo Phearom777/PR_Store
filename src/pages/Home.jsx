@@ -142,7 +142,7 @@ function Home() {
               <h3> New Product</h3>
               <p className="line"></p>
             </div>
-            <div className="arrow d-flex justify-content-end gap-2 mb-4">
+            <div className="arrow d-flex justify-content-end gap-2 mb-4 me-4">
               <i className="bi bi-chevron-left fs-5 fw-bold"></i>
               <i className="bi bi-chevron-right fs-5 fw-bold"></i>
             </div>
@@ -212,7 +212,7 @@ function Home() {
           {/* even */}
         </div>
         <div className="row">
-          <div  className="col-12 col-md-6 col-lg-6">
+          <div  className="col-12 col-md-6 col-lg-6 mb-3 mb-lg-0">
             <div  className="even_banner">
               <div className="color"></div>
 
@@ -247,13 +247,14 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="container">
         {/* Best seller */}
           <div className="all_card my-5  ">
             <div className="text-center mb-3 ">
               <h3>Best Seller</h3>
               <p className="line"></p>
             </div>
-            <div className="arrow d-flex justify-content-end gap-2 mb-4">
+            <div className="arrow d-flex justify-content-end gap-2 mb-4 me-4">
               <i className="bi bi-chevron-left fs-5 fw-bold"></i>
               <i className="bi bi-chevron-right fs-5 fw-bold"></i>
             </div>
@@ -317,6 +318,7 @@ function Home() {
               ))}
             </div>
           </div>
+        </div>
 
         <div className="container">
           <div className="row my-5 ">
