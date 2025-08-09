@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className={`container-fluid position-fixed top-0 bg-dark z-index pt-5 ${style.login}`}>
+    <div className={`container-fluid position-fixed top-0  z-index pt-5 ${style.login}`}>
       <div className={`container`}>
         <form className={`${style.form} m-auto mt-2`}>
           <h3 className="text-center">Login</h3>

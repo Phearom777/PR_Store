@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: linear-gradient(45deg, red, yellow);
+  /* background: linear-gradient(45deg, red, yellow); */
   padding: 30px;
   width: 450px;
   border-radius: 20px;
@@ -11,8 +11,16 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   transition: background 0.5s ease-in-out;
 }
+.login{
+  z-index: 11;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(45deg, red, yellow);
 
-.form:hover {
+}
+.login:hover {
   background: linear-gradient(45deg, yellow, red);
 }
 
@@ -135,13 +143,7 @@
 .button:hover {
   border: 1px solid #2d79f3;
 }
-.login{
-  z-index: 11;
-  height: 100vh;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
+
 @media (max-width: 768px) {
   .form {
     width: 90%;

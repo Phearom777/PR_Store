@@ -151,6 +151,7 @@ html {
 } */
 .card_carousel {
   width: fit-content;
+  scroll-snap-align: start;
 }
 .card .image {
   background-color: #f5f5f5;
@@ -293,7 +294,7 @@ img{
 .row_card {
   scrollbar-width: none;
 
-  /* scroll-snap-type: x mandatory; */
+  scroll-snap-type: x mandatory;
 }
 .product_type {
   z-index: 3;
