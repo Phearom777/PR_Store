@@ -35,7 +35,6 @@ function Cart() {
           <div className="row mt-3 mb-4" key={item.id}>
             <div className="col-12 col-md-6">
               <div className="row">
-                <h5 className="ps-3">Product</h5>
                 <div className="col-4 text-center">
                 <Link to={`/product-detail/${item.id}`}>
                   <img
@@ -64,7 +63,6 @@ function Cart() {
             <div className="col-12 col-md-6 text-center mt-4 mt-md-0">
               <div className="row">
                 <div className="col-6">
-                  <h5>QTY</h5>
                   <div className="d-flex justify-content-center gap-2 mt-2">
                     <p
                       className="px-2 py-1 bg-light border"
@@ -82,7 +80,6 @@ function Cart() {
                   </div>
                 </div>
                 <div className="col-6">
-                  <h5>Total</h5>
                   <p className="fs-5 fw-bold mt-3">${total(item).toFixed(2)}</p>
                 </div>
               </div>
