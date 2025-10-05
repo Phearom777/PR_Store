@@ -1,6 +1,6 @@
 // CartContext.jsx
-import { createContext, useContext, useState } from 'react';
-import { toast } from 'react-toastify';
+import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 const CartContext = createContext();
 
@@ -8,25 +8,28 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-    // Toggle favorite product
-    const toggleFavorite = (product) => {
-  console.log("Toggle favorite for:", product);
+  // Toggle favorite product
+  const toggleFavorite = (product) => {
+    console.log("Toggle favorite for:", product);
 
-  const exists = favorites.find((item) => Number(item.id) === Number(product.id));
+    const exists = favorites.find(
+      (item) => Number(item.id) === Number(product.id)
+    );
 
-  if (exists) {
-    console.log("Remove favorite", product.id);
-    toast.success("Product Remove From Fav success");
+    if (exists) {
+      console.log("Remove favorite", product.id);
+      toast.success("Product Remove From Fav success");
 
-    setFavorites(favorites.filter((item) => Number(item.id) !== Number(product.id)));
-  } else {
-    console.log("Add favorite", product.id);
+      setFavorites(
+        favorites.filter((item) => Number(item.id) !== Number(product.id))
+      );
+    } else {
+      console.log("Add favorite", product.id);
 
-    toast.success("Product Add to Fav success");
-    setFavorites([...favorites, product]);
-  }
-};
-
+      toast.success("Product Add to Fav success");
+      setFavorites([...favorites, product]);
+    }
+  };
 
   const addToCart = (item) => {
     setCartItems((prev) => {
@@ -60,29 +63,35 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
-  
 
   // ❌ Remove item
   // setCartItems((prev) => prev.filter((item) => item.id !== id));
   const removeFromCart = (id) => {
-
     setCartItems((prev) => {
-    const deleted = prev.filter((item) => item.id !== id);
-    if (deleted) {
-           toast.success('🛒 Product remove success!');
-
-    }
-   return deleted;
-  });
-// 
+      const deleted = prev.filter((item) => item.id !== id);
+      if (deleted) {
+        toast.success("🛒 Product remove success!");
+      }
+      return deleted;
+    });
+    //
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, increaseQty, decreaseQty, removeFromCart,favorites, toggleFavorite}}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        increaseQty,
+        decreaseQty,
+        removeFromCart,
+        favorites,
+        toggleFavorite,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
 
 export const useCart = () => useContext(CartContext);
-

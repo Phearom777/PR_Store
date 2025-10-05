@@ -136,5 +136,16 @@ export const products = [
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit odit maxime ullam rerum ipsum labore quasi magni! Nisi, nihil accusamus."
 
   },
+  {
+    id: 8,
+    title: "Macbook Pro",
+    image: "/image/product/macbook.jpg",
+    regularPrice: 80,
+    salePrice: 60,
+    label: "-50% off",
+    category:5,
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit odit maxime ullam rerum ipsum labore quasi magni! Nisi, nihil accusamus."
+
+  },
   // Add more products here
 ];

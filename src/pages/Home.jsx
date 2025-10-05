@@ -3,15 +3,36 @@ import { brands, categories, products } from "../service/data";
 import { useCart } from "./CartContext";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function Home() {
   // carousel
   const carouselImages = [
-    { src: "/image/product/banners1.jpg", alt: "Slide 1",title: "EXTREME DEALS OF THE DAY", },
-    { src: "/image/product/banners2.png", alt: "Slide 2",title: "SALE! 20% LAPTOP AND TABLATE", },
-    { src: "/image//product/watchbanner.jpg", alt: "Slide 3",title: "EXTREME DEALS OF THE DAY", },
-    { src: "/image//product/tvbanner.png", alt: "Slide 4",title: "SALE! 20% OF SAMSUNG TV", },
-    { src: "/image//product/asuzmonitor.png", alt: "Slide 4",title: "EXTREME DEALS OF THE DAY", },
+    {
+      src: "/image/product/banners1.jpg",
+      alt: "Slide 1",
+      title: "EXTREME DEALS OF THE DAY",
+    },
+    {
+      src: "/image/product/banners2.png",
+      alt: "Slide 2",
+      title: "SALE! 20% LAPTOP AND TABLATE",
+    },
+    {
+      src: "/image//product/watchbanner.jpg",
+      alt: "Slide 3",
+      title: "EXTREME DEALS OF THE DAY",
+    },
+    {
+      src: "/image//product/tvbanner.png",
+      alt: "Slide 4",
+      title: "SALE! 20% OF SAMSUNG TV",
+    },
+    {
+      src: "/image//product/asuzmonitor.png",
+      alt: "Slide 4",
+      title: "EXTREME DEALS OF THE DAY",
+    },
   ];
 
   // const [cart,setCart]=useState([]);
@@ -29,6 +50,18 @@ function Home() {
 
   // ✅ Toggle favorite on button click
   const isFav = favorites.some((item) => item.id === products.id);
+
+  const bestSellerRef = useRef(null);
+  const newProductRef = useRef(null);
+  const scroll = (ref,direction) => {
+    if (ref.current) {
+      const scrollAmount = 300; // pixels per click
+      ref.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <>
@@ -112,11 +145,11 @@ function Home() {
           </div>
           <div className="row">
             {categories.map((cat) => (
-              <div key={cat.id}  className="col-6 col-md-4 col-lg-4 mb-4">
-                <div  className="cate_card position-relative overflow-hidden rounded shadow-sm">
+              <div key={cat.id} className="col-6 col-md-4 col-lg-4 mb-4">
+                <div className="cate_card position-relative overflow-hidden rounded shadow-sm">
                   {/* Hover Background Overlay */}
                   <div className="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-0 hover-opacity-50 transition "></div>
-                  <div  className="row category bg-transparent text-center">
+                  <div className="row category bg-transparent text-center">
                     <div className="col-4 position-relative">
                       <p className=" cat_name w-100  ms-4   position-absolute top-50 start-50 translate-middle  ">
                         {cat.name}
@@ -135,85 +168,95 @@ function Home() {
               </div>
             ))}
           </div>
-          
-          {/* New Product */}
-          <div className="all_card my-5  ">
-            <div className="text-center mb-3 ">
-              <h3> New Product</h3>
-              <p className="line"></p>
-            </div>
-            <div className="arrow d-flex justify-content-end gap-2 mb-4 me-4">
-              <i className="bi bi-chevron-left fs-5 fw-bold"></i>
-              <i className="bi bi-chevron-right fs-5 fw-bold"></i>
-            </div>
-            <div className="row_card d-flex flex-nowrap gap-3 gap-md-2 gap-lg-5  rounded-2 py-3 px-2 overflow-x-scroll  mw-100 gap-1">
-              {products.map((product) => (
-                <div key={product.id} className="card_carousel ">
-                  <div  className="card   d-flex position-relative overflow-hidden    border-0 rounded-3">
-                    <div className="product_type bg-danger  text-light  position-absolute py-1">
-                      {product.label}
-                    </div>
-                    <Link to={`/product-detail/${product.id}`}>
-                      <div className="image  text-center  pt-3">
-                        <img
-                          src={product.image}
-                          className="img-fluid  text-center "
-                          alt={product.title}
-                        />
-                      </div>
-                    </Link>
-                    <div className="title text-start text-dark p-3">
-                      <p className="m-0 product_title">{product.title}</p>
-                      <div className=" d-flex gap-3">
-                        <del className="price text-danger">
-                          ${product.regularPrice}
-                        </del>
-                        <p className="m-0  price">${product.salePrice}</p>
-                      </div>
 
-                      <div className="cart row  d-flex align-items-center text-hover-primary">
-                        <div className="col-7 col-md-7 col-lg-7">
-                          <button
-                            onClick={() => handleAdd(product)}
-                            className="btn align-middle border-0 btn-sm  p-0"
-                          >
-                            <i className="bi bi-bag-plus-fill fs-5"></i>
-                            <span className="add_to_cart"> Add to cart</span>
-                          </button>
-                        </div>
-                        <div className="col-5 col-md-5 col-lg-5 text-end">
-                          <div className="btn  align-middle border-0 btn-sm p-0">
-                            <button
-                              onClick={() => toggleFavorite(product)}
-                              className="btn align-middle border-0 btn-sm p-0"
-                            >
-                              <i
-                                className={`bi bi-heart-fill me-2 ${
-                                  isFav ? "text-danger" : "text-dark"
-                                }`}
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                title="Favorite"
-                              ></i>
-                            </button>
-                            <Link to={`/product-detail/${product.id}`}>
-                              <i className="bi bi-search"></i>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
+          {/* New Product */}
+          <div className="all_card my-5">
+      <div className="text-center mb-3">
+        <h3>New Product</h3>
+        <p className="line"></p>
+      </div>
+
+      {/* Arrows */}
+      <div className="arrow d-flex justify-content-end gap-2 mb-4 me-4">
+        <button onClick={() => scroll(newProductRef,"left")} className="btn btn-light">
+          <i className="bi bi-chevron-left fs-5 fw-bold"></i>
+        </button>
+        <button onClick={() => scroll(newProductRef,"right")} className="btn btn-light">
+          <i className="bi bi-chevron-right fs-5 fw-bold"></i>
+        </button>
+      </div>
+
+      {/* Scrollable container */}
+      <div
+        ref={newProductRef}
+        className="row_card d-flex flex-nowrap gap-3 gap-md-2 gap-lg-5 rounded-2 py-3 px-2 overflow-x-scroll mw-100 gap-1"
+        style={{ scrollBehavior: "smooth" }}
+      >
+        {products.map((product) => (
+          <div key={product.id} className="card_carousel">
+            <div className="card d-flex position-relative overflow-hidden border-0 rounded-3">
+              <div className="product_type bg-danger text-light position-absolute py-1">
+                {product.label}
+              </div>
+              <Link to={`/product-detail/${product.id}`}>
+                <div className="image text-center pt-3">
+                  <img
+                    src={product.image}
+                    className="img-fluid text-center"
+                    alt={product.title}
+                  />
+                </div>
+              </Link>
+              <div className="title text-start text-dark p-3">
+                <p className="m-0 product_title">{product.title}</p>
+                <div className="d-flex gap-3">
+                  <del className="price text-danger">${product.regularPrice}</del>
+                  <p className="m-0 price">${product.salePrice}</p>
+                </div>
+
+                <div className="cart row d-flex align-items-center text-hover-primary">
+                  <div className="col-7">
+                    <button
+                      onClick={() => handleAdd(product)}
+                      className="btn align-middle border-0 btn-sm p-0"
+                    >
+                      <i className="bi bi-bag-plus-fill fs-5"></i>
+                      <span className="add_to_cart"> Add to cart</span>
+                    </button>
+                  </div>
+                  <div className="col-5 text-end">
+                    <div className="btn align-middle border-0 btn-sm p-0">
+                      <button
+                        onClick={() => toggleFavorite(product)}
+                        className="btn align-middle border-0 btn-sm p-0"
+                      >
+                        <i
+                          className={`bi bi-heart-fill me-2 ${
+                            isFav ? "text-danger" : "text-dark"
+                          }`}
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Favorite"
+                        ></i>
+                      </button>
+                      <Link to={`/product-detail/${product.id}`}>
+                        <i className="bi bi-search"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
+        ))}
+      </div>
+    </div>
 
           {/* even */}
         </div>
         <div className="row">
-          <div  className="col-12 col-md-6 col-lg-6 mb-3 mb-lg-0">
-            <div  className="even_banner">
+          <div className="col-12 col-md-6 col-lg-6 mb-3 mb-lg-0">
+            <div className="even_banner">
               <div className="color"></div>
 
               <img
@@ -248,54 +291,65 @@ function Home() {
           </div>
         </div>
         <div className="container">
-        {/* Best seller */}
-          <div className="all_card my-5  ">
-            <div className="text-center mb-3 ">
+          {/* Best seller */}
+          <div className="all_card my-5">
+            <div className="text-center mb-3">
               <h3>Best Seller</h3>
               <p className="line"></p>
             </div>
+
+            {/* Arrow Buttons */}
             <div className="arrow d-flex justify-content-end gap-2 mb-4 me-4">
-              <i className="bi bi-chevron-left fs-5 fw-bold"></i>
-              <i className="bi bi-chevron-right fs-5 fw-bold"></i>
+              <button onClick={() => scroll(bestSellerRef,"left")} className="btn btn-light">
+                <i className="bi bi-chevron-left fs-5 fw-bold"></i>
+              </button>
+              <button onClick={() => scroll(bestSellerRef,"right")} className="btn btn-light">
+                <i className="bi bi-chevron-right fs-5 fw-bold"></i>
+              </button>
             </div>
-            <div className="row_card d-flex flex-nowrap gap-3 gap-md-2 gap-lg-5  rounded-2 py-3 px-2 overflow-x-scroll  mw-100 gap-1">
+
+            {/* Scrollable Card Row */}
+            <div
+              ref={bestSellerRef}
+              className="row_card d-flex flex-nowrap gap-3 gap-md-2 gap-lg-5 rounded-2 py-3 px-2 overflow-x-scroll mw-100 gap-1"
+              style={{ scrollBehavior: "smooth" }}
+            >
               {products.map((product) => (
-                <div key={product.id}  className="card_carousel ">
-                  <div 
-                 className="card   d-flex position-relative overflow-hidden    border-0 rounded-3">
-                    <div className="product_type bg-danger  text-light  position-absolute py-1">
+                <div key={product.id} className="card_carousel">
+                  <div className="card d-flex position-relative overflow-hidden border-0 rounded-3">
+                    <div className="product_type bg-danger text-light position-absolute py-1">
                       {product.label}
                     </div>
                     <Link to={`/product-detail/${product.id}`}>
-                      <div className="image  text-center  pt-3">
+                      <div className="image text-center pt-3">
                         <img
                           src={product.image}
-                          className="img-fluid  text-center "
+                          className="img-fluid text-center"
                           alt={product.title}
                         />
                       </div>
                     </Link>
                     <div className="title text-start text-dark p-3">
                       <p className="m-0 product_title">{product.title}</p>
-                      <div className=" d-flex gap-3">
+                      <div className="d-flex gap-3">
                         <del className="price text-danger">
                           ${product.regularPrice}
                         </del>
-                        <p className="m-0  price">${product.salePrice}</p>
+                        <p className="m-0 price">${product.salePrice}</p>
                       </div>
 
-                      <div className="cart row  d-flex align-items-center text-hover-primary">
-                        <div className="col-7 col-md-7 col-lg-7">
+                      <div className="cart row d-flex align-items-center text-hover-primary">
+                        <div className="col-7">
                           <button
                             onClick={() => handleAdd(product)}
-                            className="btn align-middle border-0 btn-sm  p-0"
+                            className="btn align-middle border-0 btn-sm p-0"
                           >
                             <i className="bi bi-bag-plus-fill fs-5"></i>
                             <span className="add_to_cart"> Add to cart</span>
                           </button>
                         </div>
-                        <div className="col-5 col-md-5 col-lg-5 text-end">
-                          <div className="btn  align-middle border-0 btn-sm p-0">
+                        <div className="col-5 text-end">
+                          <div className="btn align-middle border-0 btn-sm p-0">
                             <button
                               onClick={() => toggleFavorite(product)}
                               className="btn align-middle border-0 btn-sm p-0"
@@ -336,7 +390,6 @@ function Home() {
                 </div>
               </div>
             ))}
-            
           </div>
         </div>
       </div>
