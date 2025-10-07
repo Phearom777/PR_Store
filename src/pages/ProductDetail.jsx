@@ -11,10 +11,7 @@ function ProductDetail() {
   const price = parseFloat(product.salePrice);
   const { addToCart, toggleFavorite } = useCart();
 
-  const handleAdd = (product) => {
-    toast.success("🛒 Product added to cart!");
-    addToCart(product);
-  };
+
 
   const randomProducts = [...products]
     .sort(() => 0.5 - Math.random())
@@ -117,7 +114,7 @@ function ProductDetail() {
                     <div className="add-to-cart-section d-flex gap-3 mt-4">
                       <button
                         className="btn btn-info btn-sm w-auto text-white "
-                        onClick={() => handleAdd(product)}
+                        onClick={() => addToCart(product)}
                       >
                         <i className="bi bi-bag-plus-fill fs-5 ">
                           {" "}
@@ -179,7 +176,7 @@ function ProductDetail() {
                     <div className="cart row  d-flex align-items-center text-hover-primary">
                       <div className="col-7 col-md-7 col-lg-7">
                         <button
-                          onClick={() => handleAdd(product)}
+                          onClick={() => addToCart(product)}
                           className="btn align-middle border-0 btn-sm  p-0"
                         >
                           <i className="bi bi-bag-plus-fill fs-5"></i>

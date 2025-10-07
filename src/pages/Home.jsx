@@ -44,7 +44,7 @@ function Home() {
   const { addToCart, favorites, toggleFavorite } = useCart();
 
   const handleAdd = (product) => {
-    toast.success("🛒 Product added to cart!");
+    // toast.success("🛒 Product added to cart!");
     addToCart(product);
   };
 
@@ -217,7 +217,7 @@ function Home() {
                 <div className="cart row d-flex align-items-center text-hover-primary">
                   <div className="col-7">
                     <button
-                      onClick={() => handleAdd(product)}
+                      onClick={() => addToCart(product)}
                       className="btn align-middle border-0 btn-sm p-0"
                     >
                       <i className="bi bi-bag-plus-fill fs-5"></i>

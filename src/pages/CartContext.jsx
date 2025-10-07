@@ -32,13 +32,16 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (item) => {
+    // console.log(item);
     setCartItems((prev) => {
       const existItem = prev.find((i) => i.id === item.id);
       if (existItem) {
+         toast.success("Product Add to cart successfully");
         return prev.map((i) =>
           i.id === item.id ? { ...i, qty: i.qty + 1 } : i
         );
       } else {
+         toast.success("Product Add to cart successfully");
         return [...prev, { ...item, qty: 1 }];
       }
     });
@@ -67,14 +70,16 @@ export const CartProvider = ({ children }) => {
   // ❌ Remove item
   // setCartItems((prev) => prev.filter((item) => item.id !== id));
   const removeFromCart = (id) => {
+    // console.log(id);
+    
     setCartItems((prev) => {
       const deleted = prev.filter((item) => item.id !== id);
-      if (deleted) {
-        toast.success("🛒 Product remove success!");
-      }
+      // if (deleted) {
+      //   toast.success("🛒 Product remove success!");
+      // }
       return deleted;
     });
-    //
+    
   };
 
   return (

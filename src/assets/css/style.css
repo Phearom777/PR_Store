@@ -21,6 +21,36 @@ html {
 .link {
   color: rgb(83, 83, 83);
   font-size: 18px;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden; /* ensure line stays inside */
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%; /* full width */
+  height: 3px;
+  background-color: #0a8bdb;
+  transform: scaleX(0);        /* invisible */
+  transform-origin: right;      /* start from left */
+  transition: transform 0.3s ease;
+}
+
+.link:hover::after {
+  transform: scaleX(1);        /* grow left → right */
+  transform-origin: left;     /* when hover ends, it closes back to right */
+}
+.link.active {
+  font-weight: bold; /* highlight active */
+  color: #007bff;    /* active color */
+}
+
+.link.active::after {
+  transform: scaleX(1); /* keep underline visible for active link */
+  transform-origin: left;
 }
 .bi-list {
   display: none;

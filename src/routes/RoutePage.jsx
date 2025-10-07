@@ -11,11 +11,13 @@ import Shop from '../pages/Shop'
 import Contact from '../pages/Contact'
 import About from '../pages/About'
 import ImageGallery from '../pages/ImageGallery'
+import ScrollToTop from '../pages/ScrollToTop'
 
 
 const RoutePage = () => {
   return (
     <div>
+      <ScrollToTop />
         <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

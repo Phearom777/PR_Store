@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../assets/css/style.css";
 import { useCart } from "../pages/CartContext";
 function Navbar() {
@@ -46,12 +46,12 @@ function Navbar() {
               <ul className=" ul gap-4 list-unstyled mb-0 ">
                 {navLinks.map((item, index) => (
                   <li key={index} onClick={() => setOpen(false)}>
-                    <Link
+                    <NavLink
                       className="link text-decoration-none cursor-pointer"
                       to={item.href}
                     >
                       {item.label}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
